@@ -101,10 +101,11 @@ export interface LavalinkPlayerVoice {
 	endpoint: string;
 	sessionId: string;
 	connected?: boolean;
+	channelId?: string;
 	ping?: number;
 }
 
-export type LavalinkPlayerVoiceOptions = Omit<LavalinkPlayerVoice, 'connected' | 'ping'>;
+export type LavalinkPlayerVoiceOptions = Required<Omit<LavalinkPlayerVoice, 'connected' | 'ping'>>;
 
 export interface LavalinkPlayer {
 	guildId: string;
